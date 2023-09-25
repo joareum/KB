@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+
+
+<!-- 오라클에서는 null값을 허용하는 옵션을 지정해야 한다. // mysql은 이 부분이 기본적으로 내장되어 있다. -->
+<settings>
+	<setting name= "jdbcTypeForNull" value="NULL"/>
+	<setting name="mapUnderscoreToCamelCase" value="true"/>
+</settings>
+
+<typeAliases>
+	<!--  <typeAlias type="com.service.spring.domain" alias="myProduct"/>-->
+	<package name="com.service.spring.domain"/>
+</typeAliases>
+
+<!-- 이 부분은 MyBatis Framework 단위 테스트용이다. -->
+
+<mappers>
+	<mapper resource="mapper/book-service-mapping.xml"/>
+	<mapper resource="mapper/userinfo-service-mapping.xml"/>
+</mappers>
+
+</configuration>
